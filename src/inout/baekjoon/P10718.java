@@ -1,4 +1,4 @@
-package inout;
+package inout.baekjoon;
 
 /*
 [output]

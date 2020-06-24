@@ -1,32 +1,33 @@
-package arithmetic;
+package arithmetic.baekjoon;
 
 import java.io.*;
 import java.util.StringTokenizer;
 
 /*
 [input]
-1 3
+5 8 4
 
 [output]
-0.33333333333333333333333333333333
+1
+1
+0
+0
 
-[input]
-4 5
-
-[output]
-0.8
  */
-public class P1008 {
+public class P10430 {
     public static void main(String[] args) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)))
         {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            double A = Double.parseDouble(st.nextToken());
-            double B = Double.parseDouble(st.nextToken());
-            double result = A/B;
+            int A = Integer.parseInt(st.nextToken());
+            int B = Integer.parseInt(st.nextToken());
+            int C = Integer.parseInt(st.nextToken());
 
-            bw.write(Double.toString(result));
+            bw.write(Integer.toString((A+B)%C) + "\n");
+            bw.write(Integer.toString(((A%C) + (B%C))%C) + "\n");
+            bw.write(Integer.toString((A*B)%C) + "\n");
+            bw.write(Integer.toString(((A%C)*(B%C))%C) + "\n");
             bw.flush();
         }
         catch (Exception e) {

@@ -1,4 +1,4 @@
-package iif;
+package iif.baekjoon;
 
 import java.io.*;
 import java.util.StringTokenizer;

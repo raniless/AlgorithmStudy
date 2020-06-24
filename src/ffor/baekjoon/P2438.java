@@ -1,32 +1,33 @@
-package arithmetic;
+package ffor.baekjoon;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 /*
 [input]
-1 2
+5
 
 [output]
-2
+*
+**
+***
+****
+*****
 
-[input]
-3 4
-
-[output]
-12
  */
-public class P10998 {
+public class P2438 {
     public static void main(String[] args) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)))
         {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int A = Integer.parseInt(st.nextToken());
-            int B = Integer.parseInt(st.nextToken());
-            int result = A*B;
+            int N = Integer.parseInt(br.readLine());
 
-            bw.write(Integer.toString(result));
+            for(int i=1; i<=N; i++) {
+                for(int j=1; j<=i; j++) {
+                    bw.write("*");
+                }
+                bw.write("\n");
+            }
+
             bw.flush();
         }
         catch (Exception e) {

@@ -1,4 +1,4 @@
-package arithmetic;
+package arithmetic.baekjoon;
 
 import java.io.*;
 import java.util.StringTokenizer;
