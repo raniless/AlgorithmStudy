@@ -69,7 +69,7 @@ public class P1753 {
 
     private static void dijkstra(int start) {
         PriorityQueue<NodeAndDist> pq = new PriorityQueue<>();
-        pq.add(new NodeAndDist(start, 0));
+        pq.offer(new NodeAndDist(start, 0));
         dist[start] = 0;
 
         while(!pq.isEmpty()) {
@@ -97,19 +97,20 @@ public class P1753 {
             }
         }
     }
+
+    static class NodeAndDist implements Comparable<NodeAndDist> {
+        int node;
+        int dist;
+
+        public NodeAndDist(int node, int dist) {
+            this.node = node;
+            this.dist = dist;
+        }
+
+        @Override
+        public int compareTo(NodeAndDist o) {
+            return dist - o.dist;
+        }
+    }
 }
 
-class NodeAndDist implements Comparable<NodeAndDist> {
-    int node;
-    int dist;
-
-    public NodeAndDist(int node, int dist) {
-        this.node = node;
-        this.dist = dist;
-    }
-
-    @Override
-    public int compareTo(NodeAndDist o) {
-        return dist - o.dist;
-    }
-}
