@@ -26,54 +26,27 @@ YES
  */
 
 public class P1865 {
-    private static int TC, N, M, W;
-    private static List<Edge> graph = new ArrayList<>();
+    private static int N, M, W;
+    private static List<Edge> graph;
     private static int[] dist;
 
     public static void main(String[] args) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)))
         {
-            TC = Integer.parseInt(br.readLine());
-            for(int tc=1; tc<=TC; tc++) {
-                StringTokenizer st = new StringTokenizer(br.readLine());
-                N = Integer.parseInt(st.nextToken());
-                M = Integer.parseInt(st.nextToken());
-                W = Integer.parseInt(st.nextToken());
+            int TC = Integer.parseInt(br.readLine());
+            for(int t=1; t<=TC; t++) {
+                initialize(br);
 
-                dist = new int[N+1];
-                Arrays.fill(dist, Integer.MAX_VALUE);
-
-                for(int i=1; i<=M; i++) {
-                    st = new StringTokenizer(br.readLine());
-                    int src = Integer.parseInt(st.nextToken());
-                    int dest = Integer.parseInt(st.nextToken());
-                    int weight = Integer.parseInt(st.nextToken());
-
-                    //방향이 없음 -> 양방향
-                    graph.add(new Edge(src, dest, weight));
-                    graph.add(new Edge(dest, src, weight));
+                String result = "NO";
+                for(int i=1; i<=N; i++) {
+                    if(bellmanFord(i)) {
+                        result = "YES";
+                        break;
+                    }
                 }
 
-                for(int i=1; i<=W; i++) {
-                    st = new StringTokenizer(br.readLine());
-                    int src = Integer.parseInt(st.nextToken());
-                    int dest = Integer.parseInt(st.nextToken());
-                    int weight = Integer.parseInt(st.nextToken());
-
-                    //웜홀 -> 음수 가중치
-                    graph.add(new Edge(src, dest, (-1)*weight));
-                }
-
-                bellmanFord(1);
-                boolean cycled = existCycle();
-
-                if (cycled) {
-                    bw.write("YES");
-                } else {
-                    bw.write("NO");
-                }
-                bw.write("\n");
+                bw.write(result + "\n");
             }
 
             bw.flush();
@@ -83,11 +56,43 @@ public class P1865 {
         }
     }
 
-    private static void bellmanFord(int start) {
+    private static void initialize(BufferedReader br) throws IOException {
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        N = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
+        W = Integer.parseInt(st.nextToken());
+        dist = new int[N+1];
+
+        graph = new ArrayList<>();
+        for(int i=1; i<=M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int src = Integer.parseInt(st.nextToken());
+            int dest = Integer.parseInt(st.nextToken());
+            int weight = Integer.parseInt(st.nextToken());
+
+            //방향이 없음 -> 양방향
+            graph.add(new Edge(src, dest, weight));
+            graph.add(new Edge(dest, src, weight));
+        }
+        for(int i=1; i<=W; i++) {
+            st = new StringTokenizer(br.readLine());
+            int src = Integer.parseInt(st.nextToken());
+            int dest = Integer.parseInt(st.nextToken());
+            int weight = Integer.parseInt(st.nextToken());
+
+            //웜홀 -> 음수 가중치
+            graph.add(new Edge(src, dest, (-1)*weight));
+        }
+    }
+
+    private static boolean bellmanFord(int start) {
+        Arrays.fill(dist, Integer.MAX_VALUE);
         dist[start] = 0;
 
+        boolean updated = false;
         //N-1번만큼 반복
         for(int i=1; i<N; i++) {
+            updated = false;
             for(Edge edge : graph) {
                 int src = edge.getSrc();
                 int dest = edge.getDest();
@@ -95,23 +100,28 @@ public class P1865 {
 
                 if(dist[src] != Integer.MAX_VALUE && dist[dest] > dist[src] + weight) {
                     dist[dest] = dist[src] + weight;
+                    updated = true;
+                }
+            }
+            if(!updated) {
+                break;
+            }
+        }
+
+        boolean cycled = false;
+        if(updated) {
+            for (Edge edge : graph) {
+                int src = edge.getSrc();
+                int dest = edge.getDest();
+                int weight = edge.getWeight();
+
+                if (dist[src] != Integer.MAX_VALUE && dist[dest] > dist[src] + weight) {
+                    cycled = true;
                 }
             }
         }
-    }
 
-    private static boolean existCycle() {
-        for(Edge edge : graph) {
-            int src = edge.getSrc();
-            int dest = edge.getDest();
-            int weight = edge.getWeight();
-
-            if(dist[src] != Integer.MAX_VALUE && dist[dest] > dist[src] + weight) {
-                return true;
-            }
-        }
-
-        return false;
+        return cycled;
     }
 
     private static class Edge {
