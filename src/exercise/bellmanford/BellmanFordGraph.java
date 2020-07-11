@@ -1,4 +1,4 @@
-package bellmanford;
+package exercise.bellmanford;
 
 // 벨만포드의 최단 경로 알고리즘 구현
 // 연결되고, 가중치가 있는 그래프를 나타내느 클래스
