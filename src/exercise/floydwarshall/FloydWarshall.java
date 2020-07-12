@@ -2,6 +2,7 @@ package exercise.floydwarshall;
 
 import java.io.*;
 import java.util.Arrays;
+import java.util.Stack;
 import java.util.StringTokenizer;
 
 /*
@@ -88,6 +89,28 @@ public class FloydWarshall {
             printMatrix(dist);
             System.out.println("[before]");
             printMatrix(before);
+            System.out.println("[route]");
+            for(int start=1; start<=N; start++) {
+                for(int end=1; end<=N; end++) {
+                    if(start == end){
+                        continue;
+                    }
+                    System.out.print(start + "->" + end + " : " + start);
+
+                    Stack<Integer> stack = new Stack<>();
+                    int pre = end;
+                    stack.push(end);
+                    while(start != before[start][pre]) {
+                        pre = before[start][pre];
+                        stack.push(pre);
+                    }
+
+                    while(!stack.isEmpty()) {
+                        System.out.print("-" + stack.pop());
+                    }
+                    System.out.println();
+                }
+            }
         }
         catch (Exception e) {
             throw e;
