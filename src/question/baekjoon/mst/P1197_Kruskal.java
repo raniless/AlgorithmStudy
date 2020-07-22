@@ -1,4 +1,4 @@
-package exercise.mst;
+package question.baekjoon.mst;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,22 +8,18 @@ import java.util.StringTokenizer;
 
 /*
 [input]
-6  8
-1  2  7
-1  3  3
-2  4  10
-3  4  1
-3  5  6
-3  6  10
-4  5  13
-5  6  4
+3 3
+1 2 1
+2 3 2
+1 3 3
 
 [output]
-21
+3
+
  */
 
-public class Kruskal {
-    private static int N, E;
+public class P1197_Kruskal {
+    private static int V, E;
     private static int[] parent;
     private static List<Edge> edgeList;
 
@@ -32,15 +28,15 @@ public class Kruskal {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)))
         {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            N = Integer.parseInt(st.nextToken());
+            V = Integer.parseInt(st.nextToken());
             E = Integer.parseInt(st.nextToken());
-            parent = new int[N+1];
-            for(int i=1; i<=N; i++) {
+            parent = new int[V+1];
+            for(int i = 1; i<= V; i++) {
                 parent[i] = i;
             }
             edgeList = new ArrayList<>();
 
-            for(int i=1; i<=E; i++) {
+            for(int i = 1; i<= E; i++) {
                 st = new StringTokenizer(br.readLine());
                 int s = Integer.parseInt(st.nextToken());
                 int e = Integer.parseInt(st.nextToken());
@@ -66,7 +62,7 @@ public class Kruskal {
         //가중치가 작은 간선 하나씩 연결
         for(Edge edge : edgeList) {
             //연결된 간선의 수가 N-1이면 MST 완선
-            if(connectionCount == N-1) {
+            if(connectionCount == V -1) {
                 break;
             }
 
@@ -132,5 +128,3 @@ public class Kruskal {
         }
     }
 }
-
-

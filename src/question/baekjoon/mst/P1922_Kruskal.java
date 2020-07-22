@@ -1,4 +1,4 @@
-package exercise.mst;
+package question.baekjoon.mst;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -8,22 +8,25 @@ import java.util.StringTokenizer;
 
 /*
 [input]
-6  8
-1  2  7
-1  3  3
-2  4  10
-3  4  1
-3  5  6
-3  6  10
-4  5  13
-5  6  4
+6
+9
+1 2 5
+1 3 4
+2 3 2
+2 4 7
+3 4 6
+3 5 11
+4 5 3
+4 6 8
+5 6 8
 
 [output]
-21
+23
+
  */
 
-public class Kruskal {
-    private static int N, E;
+public class P1922_Kruskal {
+    private static int N, M;
     private static int[] parent;
     private static List<Edge> edgeList;
 
@@ -31,17 +34,16 @@ public class Kruskal {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out)))
         {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            N = Integer.parseInt(st.nextToken());
-            E = Integer.parseInt(st.nextToken());
+            N = Integer.parseInt(br.readLine());
+            M = Integer.parseInt(br.readLine());
             parent = new int[N+1];
             for(int i=1; i<=N; i++) {
                 parent[i] = i;
             }
             edgeList = new ArrayList<>();
 
-            for(int i=1; i<=E; i++) {
-                st = new StringTokenizer(br.readLine());
+            for(int i=1; i<=M; i++) {
+                StringTokenizer st = new StringTokenizer(br.readLine());
                 int s = Integer.parseInt(st.nextToken());
                 int e = Integer.parseInt(st.nextToken());
                 int w = Integer.parseInt(st.nextToken());
@@ -132,5 +134,3 @@ public class Kruskal {
         }
     }
 }
-
-

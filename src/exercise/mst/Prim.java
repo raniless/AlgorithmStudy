@@ -1,10 +1,7 @@
 package exercise.mst;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 /*
 [input]
@@ -22,10 +19,11 @@ import java.util.StringTokenizer;
 21
  */
 
-public class Kruskal {
+public class Prim {
     private static int N, E;
     private static int[] parent;
-    private static List<Edge> edgeList;
+    private static boolean[] visited;
+    private static List<Edge>[] edgeList;
 
     public static void main(String[] args) throws IOException {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -34,23 +32,30 @@ public class Kruskal {
             StringTokenizer st = new StringTokenizer(br.readLine());
             N = Integer.parseInt(st.nextToken());
             E = Integer.parseInt(st.nextToken());
+
+            visited = new boolean[N+1];
             parent = new int[N+1];
             for(int i=1; i<=N; i++) {
                 parent[i] = i;
             }
-            edgeList = new ArrayList<>();
+
+            edgeList = new ArrayList[N+1];
+            for(int i=1; i<=N; i++) {
+                edgeList[i] = new ArrayList<>();
+            }
 
             for(int i=1; i<=E; i++) {
                 st = new StringTokenizer(br.readLine());
                 int s = Integer.parseInt(st.nextToken());
                 int e = Integer.parseInt(st.nextToken());
                 int w = Integer.parseInt(st.nextToken());
-                edgeList.add(new Edge(s, e, w));
+                edgeList[s].add(new Edge(s, e, w));
+                edgeList[e].add(new Edge(e, s, w));
             }
-            //가중치가 제일 작은 순으로 정렬
-            Collections.sort(edgeList);
 
-            int mst = kruskal();
+            int start = 1;
+            //시작노드를 하나 정한다
+            int mst = prim(start);
             bw.write(mst+"\n");
             bw.flush();
         }
@@ -59,48 +64,38 @@ public class Kruskal {
         }
     }
 
-    private static int kruskal() {
+    private static int prim(int start) {
+        visited[start] = true;
+        //가중치가 낮은 순으로 정렬하기 위해 Heap 사용
+        Queue<Edge> queue = new PriorityQueue<>();
+
+        //시작 Node 기준으로 인접한 간선들을 
+        queue.addAll(edgeList[start]);
+
         int sum = 0;
         int connectionCount = 0;
-
-        //가중치가 작은 간선 하나씩 연결
-        for(Edge edge : edgeList) {
-            //연결된 간선의 수가 N-1이면 MST 완선
+        while(!queue.isEmpty()) {
             if(connectionCount == N-1) {
                 break;
             }
 
+            Edge edge = queue.poll();
+            System.out.println(edge);
             int s = edge.getS();
             int e = edge.getE();
             int w = edge.getW();
 
-            if(find(s) != find(e)) {
-                union(s, e);
-                sum+=w;
-                connectionCount++;
+            if(visited[e]) {
+                continue;
             }
+
+            visited[e] = true;
+            sum += w;
+            connectionCount++;
+            queue.addAll(edgeList[e]);
         }
 
         return sum;
-    }
-
-    private static void union(int a, int b) {
-        int parentA = find(a);
-        int parentB = find(b);
-
-        if(parentA == parentB) {
-            return;
-        }
-
-        parent[parentB] = parentA;
-    }
-
-    private static int find(int n) {
-        if(parent[n] == n) {
-            return n;
-        }
-
-        return parent[n] = find(parent[n]);
     }
 
     static class Edge implements Comparable<Edge> {
@@ -130,7 +125,10 @@ public class Kruskal {
         public int compareTo(Edge o) {
             return w - o.getW();
         }
+
+        @Override
+        public String toString() {
+            return s + " " + e + " " + w;
+        }
     }
 }
-
-
