@@ -8,13 +8,13 @@ Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 
  */
-public class Question1 {
+public class LP1 {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
         int target = 9;
 
-        Question1 question1 = new Question1();
-        int[] answer = question1.twoSum(nums, target);
+        LP1 LP1 = new LP1();
+        int[] answer = LP1.twoSum(nums, target);
         System.out.println(answer);
     }
     public int[] twoSum(int[] nums, int target) {
