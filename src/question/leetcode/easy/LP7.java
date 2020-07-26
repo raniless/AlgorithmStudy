@@ -1,20 +1,6 @@
 package question.leetcode.easy;
 
 //Reverse Integer
-
-/*
-[ex1]
-Input: 123
-Output: 321
-
-[ex2]
-Input: -123
-Output: -321
-
-[ex3]
-Input: 120
-Output: 21
- */
 public class LP7 {
     public static void main(String[] args) {
         int x = -123;
