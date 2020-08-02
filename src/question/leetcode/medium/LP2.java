@@ -1,13 +1,16 @@
 package question.leetcode.medium;
 
+import question.leetcode.util.LeetCodeUtil;
+import question.leetcode.util.ListNode;
+
 //Add Two Numbers
 public class LP2 {
     public static void main(String[] args) {
         int[] nums1 = new int[]{2, 4, 3};
         int[] nums2 = new int[]{5, 6, 4};
 
-        ListNode l1 = makeListNode(nums1);
-        ListNode l2 = makeListNode(nums2);
+        ListNode l1 = LeetCodeUtil.makeListNode(nums1);
+        ListNode l2 = LeetCodeUtil.makeListNode(nums2);
 
         LP2 lp2 = new LP2();
         ListNode result = lp2.addTwoNumbers(l1, l2);
@@ -67,13 +70,5 @@ public class LP2 {
         }
 
         return dummyHead.next;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 }
