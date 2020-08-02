@@ -14,28 +14,7 @@ public class LP2 {
 
         LP2 lp2 = new LP2();
         ListNode result = lp2.addTwoNumbers(l1, l2);
-        printListNode(result);
-    }
-
-    private static ListNode makeListNode(int[] nums) {
-        ListNode dummyHead = new ListNode(0);
-        ListNode currentNode = dummyHead;
-        for(int val : nums) {
-            currentNode = currentNode.next = new ListNode(val);
-        }
-
-        return dummyHead.next;
-    }
-
-    private static void printListNode(ListNode listNode) {
-        ListNode currentNode = listNode;
-        while(currentNode != null) {
-            System.out.print(currentNode.val + " ");
-            if(currentNode != null) {
-                currentNode = currentNode.next;
-            }
-        }
-        System.out.println();
+        LeetCodeUtil.printListNode(result);
     }
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {

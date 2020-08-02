@@ -11,4 +11,15 @@ public abstract class LeetCodeUtil {
 
         return dummyHead.next;
     }
+
+    public static void printListNode(ListNode listNode) {
+        ListNode currentNode = listNode;
+        while(currentNode != null) {
+            System.out.print(currentNode.val + " ");
+            if(currentNode != null) {
+                currentNode = currentNode.next;
+            }
+        }
+        System.out.println();
+    }
 }
