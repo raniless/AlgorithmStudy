@@ -1,3 +1,5 @@
+package question.baekjoon;
+
 import java.io.*;
 
 public class SolutionTemplate {
