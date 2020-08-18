@@ -1,6 +1,5 @@
-package question.leetcode.easy;
+package question.leetcode.easy.range201to300;
 
-import jdk.nashorn.internal.ir.LiteralNode;
 import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.ListNode;
 

@@ -1,4 +1,4 @@
-package question.leetcode.easy;
+package question.leetcode.easy.range1to100;
 
 public class LP69 {
     public static void main(String[] args) {

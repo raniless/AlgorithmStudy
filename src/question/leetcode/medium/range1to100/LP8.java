@@ -1,6 +1,4 @@
-package question.leetcode.medium;
-
-import java.text.NumberFormat;
+package question.leetcode.medium.range1to100;
 
 //String to Integer (atoi)
 public class LP8 {

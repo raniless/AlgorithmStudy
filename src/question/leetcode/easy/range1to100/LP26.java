@@ -1,4 +1,4 @@
-package question.leetcode.easy;
+package question.leetcode.easy.range1to100;
 
 //Remove Duplicates from Sorted Array
 public class LP26 {

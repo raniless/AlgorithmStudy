@@ -1,6 +1,4 @@
-package question.leetcode.easy;
-
-import sun.reflect.generics.tree.Tree;
+package question.leetcode.easy.range601to700;
 
 import java.util.*;
 

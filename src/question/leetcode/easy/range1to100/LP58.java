@@ -1,4 +1,4 @@
-package question.leetcode.easy;
+package question.leetcode.easy.range1to100;
 
 //Length of Last Word
 public class LP58 {

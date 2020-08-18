@@ -1,6 +1,4 @@
-package question.leetcode.easy;
-
-import java.util.Arrays;
+package question.leetcode.easy.range1to100;
 
 //Plus One
 public class LP66 {

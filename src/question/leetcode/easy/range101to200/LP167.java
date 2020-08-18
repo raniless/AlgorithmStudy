@@ -1,4 +1,4 @@
-package question.leetcode.easy;
+package question.leetcode.easy.range101to200;
 
 import java.util.HashMap;
 import java.util.Map;
