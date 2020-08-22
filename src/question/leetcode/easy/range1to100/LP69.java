@@ -1,5 +1,6 @@
 package question.leetcode.easy.range1to100;
 
+//Sqrt(x)
 public class LP69 {
     public static void main(String[] args) {
         int x = 8;
