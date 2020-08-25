@@ -22,4 +22,8 @@ public abstract class LeetCodeUtil {
         }
         System.out.println();
     }
+
+    public static TreeNode makeTreeNode(String[] values) {
+        return null;
+    }
 }

@@ -5,6 +5,7 @@ import question.leetcode.util.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//Same Tree
 public class LP100 {
     public static void main(String[] args) {
 //        String[] a = new String[]{"1", "2'"};
