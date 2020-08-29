@@ -6,7 +6,8 @@ import question.leetcode.util.TreeNode;
 //Symmetric Tree
 public class LP101 {
     public static void main(String[] args) {
-        String[] input = new String[]{"1","2","2",null,"3",null,"3"};
+//        Integer[] input = new Integer[]{1,2,2,null,3,null,3};
+        Integer[] input = new Integer[]{1,2,2,3,4,4,3};
         TreeNode root = LeetCodeUtil.makeTreeNode(input);
         LP101 lp101 = new LP101();
         boolean result = lp101.isSymmetric(root);
