@@ -11,7 +11,7 @@ public class LP19 {
         int n = 2;
 
         LP19 lp19 = new LP19();
-        ListNode result = lp19.removeNthFromEnd(head, 2);
+        ListNode result = lp19.removeNthFromEnd(head, n);
         LeetCodeUtil.printListNode(result);
     }
 
