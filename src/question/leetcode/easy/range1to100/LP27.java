@@ -1,5 +1,6 @@
 package question.leetcode.easy.range1to100;
 
+// Remove Element
 public class LP27 {
     public static void main(String[] args) {
         int[] nums = new int[]{0,1,2,2,3,0,4,2};
