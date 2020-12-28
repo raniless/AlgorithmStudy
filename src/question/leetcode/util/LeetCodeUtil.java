@@ -100,6 +100,8 @@ public abstract class LeetCodeUtil {
                 }
             }
         }
+
+        System.out.println();
     }
 
     private static int getMaxDepth(TreeNode node, int depth) {
