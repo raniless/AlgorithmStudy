@@ -21,6 +21,9 @@
 - [문자열 내림차순으로 배치하기](level1/PG12917.java)
 - [문자열 다루기 기본](level1/PG12918.java)
 - [서울에서 김서방 찾기](level1/PG12919.java)
+- [아픈 동물 찾기](level1/PG59036.sql)
+- [소수 찾기](level1/PG12921.java)
+
 ## Level2
 - 예정
 
