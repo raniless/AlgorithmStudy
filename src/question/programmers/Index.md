@@ -37,6 +37,11 @@
 - [제일 작은 수 제거하기](level1/PG12935.java)
 - [짝수와 홀수](level1/PG12937.java)
 - [키패드 누르기](level1/PG67256.java)
+- [동물의 아이디와 이름](level1/PG59403.sql)
+- [최대공약수와 최소공배수](level1/PG12940.java)
+- [콜라츠 추측](level1/PG12943.java)
+- [평균 구하기](level1/PG12944.java)
+
 ## Level2
 - 예정
 
