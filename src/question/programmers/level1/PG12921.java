@@ -1,5 +1,7 @@
 package question.programmers.level1;
 
+import java.util.Arrays;
+
 // 소수 찾기
 public class PG12921 {
     public static void main(String[] args) {
@@ -13,30 +15,31 @@ public class PG12921 {
     }
 
     public int solution(int n) {
-        // 기법 : 에라토스테네스의 체
-        // 소수를 찾기위한 boolean 배열 (소수 = false, 소수아님 = true )
-        // 인덱스번호와 숫자의 순서를 맞추기 위해 n+1길이 선언
-        boolean[] prime= new boolean[n+1];
+        /*
+         * 에라토스테네스의 체
+         * (https://blog.naver.com/limchung90/221749963747)
+         */
 
-        // 인덱스 0번째와 1번째는 소수아님 처리 (0, 1)
-        prime[0] = true;
-        prime[1] = true;
+        // 소수 Check 배열
+        boolean[] prime = new boolean[n+1];
+        Arrays.fill(prime, true);
 
-        // n은 i의 제곱근보다 커야한다.
+        // 0, 1 소수 x
+        prime[0] = false;
+        prime[1] = false;
+
+        // n은 i의 제곱근보다 커야한다. (Why? 제곱근이 n보다 크면 i보다 작은 소수에서 이미 Check를 했기 때문)
         for(int i=2; i*i<=n; i++) {
-            // i의 제곱근의 인덱스번호에 해당하는 숫자를 소수아님 처리
-            // ex) i=2 (소수) -> i*i = 4 (소수아님)
-            // j에 i를 더한 제곱근이 n만큼 작을 때 반복적으로 나오는 인덱스 번호를 소수아님 처리
+            // i의 제곱근 부터 i의 배수 소수아님 처리
             for(int j=i*i; j<=n; j+=i) {
-                prime[j] = true;
+                prime[j] = false;
             }
         }
 
-        // prime 배열 내의 false(소수) 표시를 찾고
+        // 소수 Count
         int answer = 0;
         for(int i=0; i<=n; i++) {
-            if(prime[i] == false) {
-                // answer에 +1
+            if(prime[i]) {
                 answer +=1;
             }
         }

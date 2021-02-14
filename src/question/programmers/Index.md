@@ -23,7 +23,16 @@
 - [서울에서 김서방 찾기](level1/PG12919.java)
 - [아픈 동물 찾기](level1/PG59036.sql)
 - [소수 찾기](level1/PG12921.java)
-
+- [수박수박수박수박수박수?](level1/PG12922.java)
+- [문자열을 정수로 바꾸기](level1/PG12925.java)
+- [내적](level1/PG70128.java)
+- [시저 암호](level1/PG12926.java)
+- [약수의 합](level1/PG12928.java)
+- [어린 동물 찾기](level1/PG59037.sql)
+- [이상한 문자 만들기](level1/PG12930.java)
+- [자릿수 더하기](level1/PG12931.java)
+- [자연수 뒤집어 배열로 만들기](level1/PG12932.java)
+- [정수 내림차순으로 배치하기](level1/PG12933.java)
 ## Level2
 - 예정
 
