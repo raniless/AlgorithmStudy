@@ -33,6 +33,10 @@
 - [자릿수 더하기](level1/PG12931.java)
 - [자연수 뒤집어 배열로 만들기](level1/PG12932.java)
 - [정수 내림차순으로 배치하기](level1/PG12933.java)
+- [정수 제곱근 판별](level1/PG12934.java)
+- [제일 작은 수 제거하기](level1/PG12935.java)
+- [짝수와 홀수](level1/PG12937.java)
+- [키패드 누르기](level1/PG67256.java)
 ## Level2
 - 예정
 

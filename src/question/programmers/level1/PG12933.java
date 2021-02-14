@@ -1,7 +1,6 @@
 package question.programmers.level1;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
 
 // 정수 내림차순으로 배치하기
 public class PG12933 {
@@ -14,7 +13,13 @@ public class PG12933 {
     }
 
     public long solution(long n) {
-        long answer = 0;
-        return answer;
+        char[] chars = String.valueOf(n).toCharArray();
+        Arrays.sort(chars);
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=chars.length-1; i>=0; i--) {
+            sb.append(chars[i]);
+        }
+        return Long.parseLong(sb.toString());
     }
 }
