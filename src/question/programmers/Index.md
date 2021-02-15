@@ -41,6 +41,17 @@
 - [최대공약수와 최소공배수](level1/PG12940.java)
 - [콜라츠 추측](level1/PG12943.java)
 - [평균 구하기](level1/PG12944.java)
+- [하샤드 수](level1/PG12947.java)
+- [핸드폰 번호 가리기](level1/PG12948.java)
+- [이름이 없는 동물의 아이디](level1/PG59039.sql)
+- [여러 기준으로 정렬하기](level1/PG59404.sql)
+- [행렬의 덧셈](level1/PG12950.java)
+- [x만큼 간격이 있는 n개의 숫자](level1/PG12954.java)
+- [이름이 있는 동물의 아이디](level1/PG59407.sql)
+- [상위 n개 레코드](level1/PG59405.sql)
+- [직사각형 별찍기](level1/PG12969.java)
+- [예산](level1/PG12982.java)
+- [\[1차\] 비밀지도](level1/PG17681.java)
 
 ## Level2
 - 예정
