@@ -30,12 +30,8 @@ public class PG42889 {
 
         Map<Integer, Double> map = new TreeMap<>();
         for(int i=1; i<=N; i++) {
-            map.put(i, (double)challenge[i] / total[i]);
+            map.put(i, challenge[i] == 0 ? 0 : (double)challenge[i] / total[i]);
         }
-
-//        for(Map.Entry<Integer, Double> entry : map.entrySet()) {
-//            System.out.println(entry.getKey() + " : " + entry.getValue());
-//        }
 
         List<Map.Entry<Integer, Double>> list = new ArrayList<>();
         list.addAll(map.entrySet());
@@ -47,10 +43,6 @@ public class PG42889 {
 
             return e2.getValue().compareTo(e1.getValue());
         });
-
-//        for(Map.Entry<Integer, Double> entry : list) {
-//            System.out.println(entry.getKey() + " : " + entry.getValue());
-//        }
 
         int[] answer = new int[N];
         for(int i=0; i<N; i++) {
