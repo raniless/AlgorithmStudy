@@ -52,6 +52,8 @@
 - [직사각형 별찍기](level1/PG12969.java)
 - [예산](level1/PG12982.java)
 - [\[1차\] 비밀지도](level1/PG17681.java)
+- [실패율 - 진행중](level1/PG42889.java)
+- [\[1차\] 다트 게임](level1/PG17682.java)
 
 ## Level2
 - 예정

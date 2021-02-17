@@ -15,26 +15,20 @@ public class PG17681 {
         for(PG17681Test test : tests) {
             String[] answer = pg17681.solution(test.getN(), test.getArr1(), test.getArr2());
             System.out.println(Arrays.toString(answer));
-//            Arrays.stream(answer).forEach(s -> System.out.print(s + ", "));
-//            System.out.println();
         }
     }
 
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
         for(int i=0; i<n; i++) {
-//            String s1 = String.format("%0"+n+"d", Integer.parseInt(Integer.toBinaryString(arr1[i])));
-//            String s2 = String.format("%0"+n+"d", Integer.parseInt(Integer.toBinaryString(arr2[i])));
-//            String s3 = String.format("%0"+n+"d", Integer.parseInt(Integer.toBinaryString(arr1[i] | arr2[i])));
-//            System.out.println("s1 : " + s1 + " s2 : " + s2 + " s3 : " + s3);
+            String binary = Integer.toBinaryString(arr1[i] | arr2[i]);
 
-//            String str = String.format("%0"+n+"d", Integer.parseInt(Integer.toBinaryString(arr1[i] | arr2[i])));
-            int orResult = arr1[i] | arr2[i];
-            String str = String.format("%0"+n+"d", Integer.parseInt(Integer.toBinaryString(orResult)));
-//            System.out.println("before : " + str);
-            str = str.replace("1", "#").replace("0", " ");
-//            System.out.println("after : " + str);
-            answer[i] = str;
+            while(binary.length() < n) {
+                binary = "0" + binary;
+            }
+            binary = binary.replace("1", "#").replace("0", " ");
+
+            answer[i] = binary;
         }
 
         return answer;
