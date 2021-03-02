@@ -43,7 +43,7 @@
 - [평균 구하기](level1/PG12944.java)
 
 ## Level2
-- 예정
+- [124 나라의 숫자](level2/PG12899.java)
 
 ## Level3
 - 예정
