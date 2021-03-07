@@ -57,7 +57,9 @@
 
 ## Level2
 - [124 나라의 숫자](level2/PG12899.java)
-
+- [스킬트리](level2/PG49993.java)
+- [프린터](level2/PG42587.java)
+- [기능개발]()
 ## Level3
 - 예정
 
