@@ -1,8 +1,6 @@
 package question.programmers.level2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 //기능개발
 public class PG42586 {
@@ -18,8 +16,72 @@ public class PG42586 {
         }
     }
 
+    /*
+    //Version 1
     public int[] solution(int[] progresses, int[] speeds) {
-        int[] answer = {};
+        Queue<Integer> queue = new LinkedList<>();
+
+        int releaseIdx = 0;
+        while(releaseIdx < progresses.length) {
+            if(progresses[releaseIdx] < 100) {
+                for(int i=releaseIdx; i<progresses.length; i++) {
+                    progresses[i] += speeds[i];
+                }
+            }
+            else {
+                int cnt = 0;
+                while(releaseIdx < progresses.length) {
+                    if(progresses[releaseIdx] < 100) {
+                        break;
+                    }
+
+                    cnt++;
+                    releaseIdx++;
+                }
+                queue.add(cnt);
+            }
+        }
+
+        int[] answer = new int[queue.size()];
+        for(int i=0; i<answer.length; i++) {
+            answer[i] = queue.poll();
+        }
+
+        return answer;
+    }
+    */
+
+    // Version 2 - More Fast
+    public int[] solution(int[] progresses, int[] speeds) {
+        Queue<Integer> queue = new LinkedList<>();
+
+        int workingDays = 1;
+        for(int i=0; i<progresses.length; i++) {
+            //완료 작업일수 계산
+            while(progresses[i] + (speeds[i] * workingDays) < 100) {
+                workingDays++;
+            }
+
+            //다음 기능부터 완료된 기능 개수 Count
+            int releaseCnt = 0;
+            while(i < progresses.length) {
+                if(progresses[i] + (speeds[i] * workingDays) < 100) {
+                    i--;
+                    break;
+                }
+
+                releaseCnt++;
+                i++;
+            }
+
+            queue.add(releaseCnt);
+        }
+
+        int[] answer = new int[queue.size()];
+        for(int i=0; i<answer.length; i++) {
+            answer[i] = queue.poll();
+        }
+
         return answer;
     }
 
