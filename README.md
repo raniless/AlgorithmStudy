@@ -1,4 +1,4 @@
-# AlogrithmStudy
+# AlgorithmStudy
 ### [1. Index of Baekjoon](src/question/baekjoon/Index.md)
 
 ### [2. Index of Codility](src/question/codility/Index.md)
