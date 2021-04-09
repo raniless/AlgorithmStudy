@@ -1,4 +1,4 @@
-package question.leetcode.easy.range101to200;
+package question.leetcode.medium.range101to200;
 
 import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.TreeNode;

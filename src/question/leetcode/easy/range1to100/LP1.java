@@ -3,7 +3,7 @@ package question.leetcode.easy.range1to100;
 import java.util.HashMap;
 import java.util.Map;
 
-//Two Sum
+// 1. Two Sum (https://leetcode.com/problems/two-sum/)
 public class LP1 {
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
