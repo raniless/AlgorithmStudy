@@ -61,6 +61,7 @@
 - [22. Generate Parentheses](medium/range1to100/LP22.java)
 - [24. Swap Nodes in Pairs](medium/range1to100/LP24.java)
 - [33. Search in Rotated Sorted Array](medium/range1to100/LP33.java)
+- [34. Find First and Last Position of Element in Sorted Array](medium/range1to100/LP34.java)  
 - [107. Binary Tree Level Order Traversal II](medium/range101to200/LP107.java)
 
 ## Hard
