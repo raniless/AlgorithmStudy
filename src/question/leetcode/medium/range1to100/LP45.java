@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 // Jump Game II
 //  - https://leetcode.com/problems/jump-game-ii/
+//  - ref : https://bcp0109.tistory.com/entry/LeetCode-Hard-Jump-Game-II-Java
 public class LP45 {
     public static void main(String[] args) {
         ArrayList<int[]> tests = new ArrayList<>();
