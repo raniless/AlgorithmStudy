@@ -63,6 +63,7 @@
 - [33. Search in Rotated Sorted Array](medium/range1to100/LP33.java)
 - [34. Find First and Last Position of Element in Sorted Array](medium/range1to100/LP34.java)
 - [39. Combination Sum](medium/range1to100/LP39.java)
+- [45. Jump Game II](medium/range1to100/LP45.java)
 - [107. Binary Tree Level Order Traversal II](medium/range101to200/LP107.java)
 
 ## Hard
