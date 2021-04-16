@@ -1,6 +1,7 @@
 package question.leetcode.easy.range1to100;
 
-//Implement strStr()
+// Implement strStr()
+//  - https://leetcode.com/problems/implement-strstr/
 public class LP28 {
     public static void main(String[] args) {
         String haystack = "hello";

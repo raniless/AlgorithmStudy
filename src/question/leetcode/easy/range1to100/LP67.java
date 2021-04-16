@@ -1,21 +1,21 @@
 package question.leetcode.easy.range1to100;
 
-//Add Binary
-/*
-Input: a = "11", b = "1"
-Output: "100"
+import java.util.ArrayList;
+import java.util.List;
 
-Input: a = "1010", b = "1011"
-Output: "10101"
- */
+// Add Binary
+//  - https://leetcode.com/problems/add-binary/
 public class LP67 {
     public static void main(String[] args) {
-        String a = "11";
-        String b = "1";
+        List<LP67Test> tests = new ArrayList<>();
+        tests.add(new LP67Test("11", "1"));
+        tests.add(new LP67Test("1010", "1011"));
 
         LP67 lp67 = new LP67();
-        String result = lp67.addBinary(a, b);
-        System.out.println(result);
+        for(LP67Test test : tests) {
+            String result = lp67.addBinary(test.getA(), test.getB());
+            System.out.println(result);
+        }
     }
 
     public String addBinary(String a, String b) {
@@ -46,5 +46,31 @@ public class LP67 {
         }
 
         return result;
+    }
+
+    static class LP67Test {
+        private String a;
+        private String b;
+
+        public LP67Test(String a, String b) {
+            this.a = a;
+            this.b = b;
+        }
+
+        public String getA() {
+            return a;
+        }
+
+        public void setA(String a) {
+            this.a = a;
+        }
+
+        public String getB() {
+            return b;
+        }
+
+        public void setB(String b) {
+            this.b = b;
+        }
     }
 }

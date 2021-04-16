@@ -1,14 +1,7 @@
 package question.leetcode.easy.range1to100;
 
 // Longest Common Prefix
-/*
-Input: ["flower","flow","flight"]
-Output: "fl"
-
-Input: ["dog","racecar","car"]
-Output: ""
-Explanation: There is no common prefix among the input strings.
- */
+// - https://leetcode.com/problems/longest-common-prefix/
 public class LP14 {
     public static void main(String[] args) {
         String[] strs = new String[]{"flower","flow","flight"};

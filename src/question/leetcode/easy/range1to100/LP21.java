@@ -3,11 +3,8 @@ package question.leetcode.easy.range1to100;
 import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.ListNode;
 
-//Merge Two Sorted Lists
-/*
-Input: 1->2->4, 1->3->4
-Output: 1->1->2->3->4->4
- */
+// Merge Two Sorted Lists
+// - https://leetcode.com/problems/merge-two-sorted-lists/
 public class LP21 {
     public static void main(String[] args) {
         int[] values = new int[]{-9, 3};

@@ -1,6 +1,7 @@
 package question.leetcode.easy.range1to100;
 
-//Plus One
+// Plus One
+//  - https://leetcode.com/problems/plus-one/
 public class LP66 {
     public static void main(String[] args) {
 //        int[] digits = new int[]{9,8,7,6,5,4,3,2,1,0};

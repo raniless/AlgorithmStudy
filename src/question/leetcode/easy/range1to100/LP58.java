@@ -1,6 +1,7 @@
 package question.leetcode.easy.range1to100;
 
-//Length of Last Word
+// Length of Last Word
+//  - https://leetcode.com/problems/length-of-last-word/
 public class LP58 {
     public static void main(String[] args) {
 //        String s = "Hello World";

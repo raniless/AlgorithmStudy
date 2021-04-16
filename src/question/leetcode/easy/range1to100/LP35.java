@@ -1,27 +1,23 @@
 package question.leetcode.easy.range1to100;
 
-//Search Insert Position
-/*
-Input: [1,3,5,6], 5
-Output: 2
+import java.util.ArrayList;
+import java.util.List;
 
-Input: [1,3,5,6], 2
-Output: 1
-
-Input: [1,3,5,6], 7
-Output: 4
-
-Input: [1,3,5,6], 0
-Output: 0
- */
+// Search Insert Position
+//  - https://leetcode.com/problems/search-insert-position/
 public class LP35 {
     public static void main(String[] args) {
-        int[] nums = new int[]{1,3,5,6};
-        int target = 7;
+        List<LP35Test> tests = new ArrayList<>();
+        tests.add(new LP35Test(new int[]{1,3,5,6}, 5));
+        tests.add(new LP35Test(new int[]{1,3,5,6}, 2));
+        tests.add(new LP35Test(new int[]{1,3,5,6}, 7));
+        tests.add(new LP35Test(new int[]{1,3,5,6}, 0));
 
         LP35 lp35 = new LP35();
-        int result = lp35.searchInsert(nums, target);
-        System.out.println(result);
+        for(LP35Test test :tests) {
+            int result = lp35.searchInsert(test.getNums(), test.getTarget());
+            System.out.println(result);
+        }
     }
 
     public int searchInsert(int[] nums, int target) {
@@ -63,6 +59,32 @@ public class LP35 {
             else {
                 return findIndex(nums, target, mid+1, end);
             }
+        }
+    }
+
+    static class LP35Test {
+        private int[] nums;
+        private int target;
+
+        public LP35Test(int[] nums, int target) {
+            this.nums = nums;
+            this.target = target;
+        }
+
+        public int[] getNums() {
+            return nums;
+        }
+
+        public void setNums(int[] nums) {
+            this.nums = nums;
+        }
+
+        public int getTarget() {
+            return target;
+        }
+
+        public void setTarget(int target) {
+            this.target = target;
         }
     }
 }
