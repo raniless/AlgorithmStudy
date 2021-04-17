@@ -4,6 +4,7 @@ import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.TreeNode;
 
 // Minimum Depth of Binary Tree
+// - https://leetcode.com/problems/minimum-depth-of-binary-tree/
 public class LP111 {
     public static void main(String[] args) {
 //        Integer[] input = new Integer[]{3,9,20,null,null,15,7};

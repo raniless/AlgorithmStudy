@@ -3,7 +3,9 @@ package question.leetcode.easy.range101to200;
 import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.TreeNode;
 
-//Symmetric Tree
+// Symmetric Tree
+//  - Symmetric : 대칭
+//  - https://leetcode.com/problems/symmetric-tree/
 public class LP101 {
     public static void main(String[] args) {
 //        Integer[] input = new Integer[]{1,2,2,null,3,null,3};

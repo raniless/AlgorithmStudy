@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Pascal's Triangle
+//  - https://leetcode.com/problems/pascals-triangle/
 public class LP118 {
     public static void main(String[] args) {
         int numRows = 5;

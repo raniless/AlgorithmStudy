@@ -1,4 +1,6 @@
 -- Duplicate Emails
+--  https://leetcode.com/problems/duplicate-emails/
+
 -- Write your MySQL query statement below
 select Email
   from Person

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Pascal's Triangle II
+//  - https://leetcode.com/problems/pascals-triangle-ii/
 public class LP119 {
     public static void main(String[] args) {
         int rowIndex = 5;
@@ -11,6 +12,25 @@ public class LP119 {
         LP119 lp119 = new LP119();
         List<Integer> result = lp119.getRow(rowIndex);
         System.out.println(result);
+    }
+
+    //More Efficient Case
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> answer = new ArrayList<>();
+        answer.add(1);
+
+        for(int i=1; i<=rowIndex; i++) {
+            int preVal = 1;
+
+            for(int j=1; j<i; j++) {
+                int val = answer.get(j);
+                answer.set(j, preVal+val);
+                preVal = val;
+            }
+            answer.add(1);
+        }
+
+        return answer;
     }
 
     /*
@@ -34,23 +54,4 @@ public class LP119 {
         return current;
     }
     */
-
-    //More Efficient Case
-    public List<Integer> getRow(int rowIndex) {
-        List<Integer> answer = new ArrayList<>();
-        answer.add(1);
-
-        for(int i=1; i<=rowIndex; i++) {
-            int preVal = 1;
-
-            for(int j=1; j<i; j++) {
-                int val = answer.get(j);
-                answer.set(j, preVal+val);
-                preVal = val;
-            }
-            answer.add(1);
-        }
-
-        return answer;
-    }
 }

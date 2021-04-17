@@ -4,12 +4,29 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+// Majority Element
+//  - https://leetcode.com/problems/majority-element/
 public class LP169 {
     public static void main(String[] args) {
         int[] nums = new int[]{2,2,1,1,1,2,2};
         LP169 lp169 = new LP169();
         int result = lp169.majorityElement(nums);
         System.out.println(result);
+    }
+
+    //Boyer-Moore Voting Algorithm (추가학습 필요)
+    public int majorityElement(int[] nums) {
+        int count = 0;
+        Integer candidate = null;
+
+        for (int num : nums) {
+            if (count == 0) {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+
+        return candidate;
     }
 
     /*
@@ -49,19 +66,4 @@ public class LP169 {
         return nums[nums.length/2];
     }
     */
-
-    //Boyer-Moore Voting Algorithm (추가학습 필요)
-    public int majorityElement(int[] nums) {
-        int count = 0;
-        Integer candidate = null;
-
-        for (int num : nums) {
-            if (count == 0) {
-                candidate = num;
-            }
-            count += (num == candidate) ? 1 : -1;
-        }
-
-        return candidate;
-    }
 }

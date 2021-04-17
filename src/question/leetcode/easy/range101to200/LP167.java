@@ -3,7 +3,8 @@ package question.leetcode.easy.range101to200;
 import java.util.HashMap;
 import java.util.Map;
 
-//Two Sum II - Input array is sorted
+// Two Sum II - Input array is sorted
+//  - https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 public class LP167 {
     public static void main(String[] args) {
         int[] numbers = new int[]{2, 7, 11, 15};
