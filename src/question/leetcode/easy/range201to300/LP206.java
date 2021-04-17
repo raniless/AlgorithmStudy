@@ -3,7 +3,8 @@ package question.leetcode.easy.range201to300;
 import question.leetcode.util.LeetCodeUtil;
 import question.leetcode.util.ListNode;
 
-//Reverse Linked List
+// Reverse Linked List
+// - https://leetcode.com/problems/reverse-linked-list/
 public class LP206 {
     public static void main(String[] args) {
         int[] values = new int[]{1,2,3,4,5};
@@ -12,6 +13,25 @@ public class LP206 {
         LP206 lp206 = new LP206();
         ListNode result = lp206.reverseList(head);
         LeetCodeUtil.printListNode(result);
+    }
+
+    //Recursive
+    //Leaf Node 기준으로 순차적으로 Link 방향을 변경하고 Leaf Node를 최종 Return 한다.
+    public ListNode reverseList(ListNode head) {
+        //Leaf Node Return
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        //Leaf Node(예제로 치면 5)를 받는다.
+        ListNode p = reverseList(head.next);
+        //1.Reverse Link를 추가한다. (head가 4이면 4->5 에서 4<->5로 Reverse Link 추가)
+        head.next.next = head;
+        //2.기존 Link를 제거한다.(head가 4이면 4<->5 에서 4<-5로 기존 Link 제거)
+        head.next = null;
+
+        //Leaf Node(예제로 치면 5)를 return 한다.
+        return p;
     }
 
     /*
@@ -36,23 +56,4 @@ public class LP206 {
         return reverseNext;
     }
     */
-
-    //Recursive
-    //Leaf Node 기준으로 순차적으로 Link 방향을 변경하고 Leaf Node를 최종 Return 한다.
-    public ListNode reverseList(ListNode head) {
-        //Leaf Node Return
-        if (head == null || head.next == null) {
-            return head;
-        }
-
-        //Leaf Node(예제로 치면 5)를 받는다.
-        ListNode p = reverseList(head.next);
-        //1.Reverse Link를 추가한다. (head가 4이면 4->5 에서 4<->5로 Reverse Link 추가)
-        head.next.next = head;
-        //2.기존 Link를 제거한다.(head가 4이면 4<->5 에서 4<-5로 기존 Link 제거)
-        head.next = null;
-
-        //Leaf Node(예제로 치면 5)를 return 한다.
-        return p;
-    }
 }
