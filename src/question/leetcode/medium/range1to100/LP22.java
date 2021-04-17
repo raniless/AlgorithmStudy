@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Generate Parentheses
+//  - https://leetcode.com/problems/generate-parentheses/
 public class LP22 {
     //좀 더 학습이 필요
     public static void main(String[] args) {
