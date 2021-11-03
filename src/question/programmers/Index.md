@@ -60,6 +60,10 @@
 - [스킬트리](level2/PG49993.java)
 - [프린터](level2/PG42587.java)
 - [기능개발](level2/PG42586.java)
+- [더 맵게](level2/PG42626.java)
+- [타겟 넘버](level2/PG43165.java)
+- [고양이와 개는 몇 마리 있을까](level2/PG59040.sql)
+- [루시와 엘라 찾기](level2/PG59046.sql)
 ## Level3
 - 예정
 
